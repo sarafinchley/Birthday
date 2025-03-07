@@ -1,0 +1,109 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Фон и центрирование */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f8d7e2, #f0e5e5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Стили для всех экранов */
+.screen {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/* Появление экрана */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Первый экран всегда виден */
+#start-screen {
+    display: block;
+}
+
+/* Заголовки */
+h1, h2 {
+    font-size: 2em;
+    color: #53377A;
+}
+
+/* Кнопки */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #7a3766;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #402A5D;
+}
+
+/* Лепестки */
+.petals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.petal {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: url('./images/petals.png') no-repeat center;
+    mix-blend-mode: multiply;
+    background-size: contain;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }
+}
+@keyframes explode {
+    0% {
+        transform: scale(0); /* Начинаем с 0 размера */
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2); /* Немного больше для эффекта "взрыва" */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1); /* Завершаем нормальным размером */
+        opacity: 1;
+    }
+}
+
+.flower-explosion {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background: url('images/flower.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0; /* Скрыто изначально */
+    animation: explode 1s ease-out forwards;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поздравление с 8 Марта</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Стартовый экран -->
+    <div id="start-screen" class="screen">
+        <h1>С 8 Марта, <span id="name-placeholder">Дорогая!</span> 💐</h1>
+        <button id="start-button">Нажми, чтобы открыть сюрприз</button>
+    </div>
+
+    <!-- Основной экран -->
+    <div id="main-screen" class="screen">
+        <h2>С 8 Марта, моя прекрасная! 🌸 Пусть в твоём сердце всегда цветёт весна, глаза сияют от счастья, а мечты сбываются легко и красиво! 💐✨💖</h2>
+        <div class="card">
+            <p>Ты самая прекрасная!</p>
+        </div>
+        <button id="music-toggle">Включить музыку 🎵</button>
+        <audio id="background-music" loop>
+            <source src="music/music.mp3" type="audio/mp3">
+        </audio>
+        <button id="surprise-button">Посмотреть сюрприз 🎁</button>
+    </div>
+
+    <!-- Сюрприз -->
+   <div id="surprise-screen" class="screen">
+        <h2>Сюрприз для тебя! 🎉 Твой фотопортрет готов!🎉</h2>
+        <div class="flower">
+            <img src="images/flower.png" alt="Цветок">
+        </div>
+        <p>Я надеюсь, ты улыбнулась. Люблю тебя! ❤️</p>
+    </div>
+  
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
